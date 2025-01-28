@@ -1,3 +1,9 @@
-    <h1>1d20</h1>
+<h1>1d20</h1>
 
-    <p><%=@outcome%></p></html>
+<ul>
+  <%@rolls.each do |roll|%>
+    <li>
+      <%=roll%>
+    </li>
+  <%end%>
+</ul>

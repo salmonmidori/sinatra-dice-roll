@@ -13,49 +13,41 @@ get("/") do
 end
 
 get("/dice/2/6") do
-  sum = 0
-  dice = Array.new
+  @rolls = []
   2.times do |x|
-    dice[x] = rand(1..6)
-    sum += dice[x]
+    die = rand(1..6)
+    @rolls.push(die)
   end
-
-  @outcome = "You rolled a #{dice[0]} and #{dice[1]} for a total of #{sum}."
+  
   erb(:two_six)
 
 end
 
 
 get("/dice/2/10") do
-  sum = 0
-  dice = Array.new
+  @rolls = []
   2.times do |x|
-    dice[x] = rand(1..10)
-    sum += dice[x]
+    die = rand(1..10)
+    @rolls.push(die)
   end
-
-  @outcome = "You rolled a #{dice[0]} abd #{dice[1]} for a total of #{sum}."
   erb(:two_ten)
 end
 
 
 get("/dice/1/20") do
 
-  first_die = rand(1..20)
-
-  @outcome = "You rolled a #{first_die}."
+  @rolls = []
+    die = rand(1..20)
+    @rolls.push(die)
   erb(:one_twenty)
 end
 
 
 get("/dice/5/4") do
-  sum = 0
-  dice = Array.new
+  @rolls = []
   5.times do |x|
-    dice[x] = rand(1..4)
-    sum += dice[x]
+    die = rand(1..4)
+    @rolls.push(die)
   end
-
-  @outcome = "You rolled a #{dice[0]}, #{dice[1]}, #{dice[2]}, and #{dice[3]} for a total of #{sum}."
   erb(:five_four)
 end
